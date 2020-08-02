@@ -67,17 +67,17 @@ const NavBar = () => {
             {renderList()}
             </ul>
         </div>
-        <div id="modal1" class="modal" ref={searchModal} style={{color:"black"}}>
+        <div id="modal1" className="modal" ref={searchModal} style={{color:"black"}}>
           <div className="modal-content">
           <input
             type="text"
-            placeholder="search users"
+            placeholder="Search Users"
             value={search}
             onChange={(e)=>fetchUsers(e.target.value)}
             />
-             <ul className="collection">
+             <ul className="collection" >
                {userDetails.map(item=>{
-                 return <Link to={item._id !== state._id ? "/profile/"+item._id:'/profile'} onClick={()=>{
+                 return <Link key={state._id} to={item._id !== state._id ? "/profile/"+item._id:'/profile'} onClick={()=>{
                    M.Modal.getInstance(searchModal.current).close()
                    setSearch('')
                  }}><li className="collection-item">{item.email}</li></Link> 

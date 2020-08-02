@@ -18,7 +18,7 @@ const Profile = () => {
         })
     },[])
 
-    useEffect({
+    useEffect(() => {
         if(image){
             const data = new FormData()
             data.append("file",image)
@@ -95,6 +95,9 @@ const Profile = () => {
                     onChange={(e) => updatePhoto(e.target.files[0])}
                     />
                 </div>
+                <div className="file-path-wrapper">
+                <input className="file-path validate" type="text" />
+            </div>
                 
                 </div>
             </div>

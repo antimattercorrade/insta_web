@@ -33,7 +33,7 @@ const Home = () => {
         .then(res => res.json())
         .then(result => {
             const newData = data.map(item => {
-                if(item._id==result._id){
+                if(item._id===result._id){
                     return result
                 }
                 else {
@@ -61,7 +61,7 @@ const Home = () => {
         .then(res => res.json())
         .then(result => {
             const newData = data.map(item => {
-                if(item._id==result._id){
+                if(item._id===result._id){
                     return result
                 }
                 else {
@@ -90,7 +90,7 @@ const Home = () => {
         .then(res => res.json())
         .then(result => {
             const newData = data.map(item => {
-                if(item._id==result._id){
+                if(item._id===result._id){
                     return result
                 }
                 else {
@@ -129,7 +129,7 @@ const Home = () => {
                         <div className="card home-card" key={item._id}>
                             <h5 style={{padding:"5px"}}><Link to={item.postedBy._id !== state._id ? "/profile/"+item.postedBy._id : "/profile"}>{item.postedBy.name}</Link>
                             {
-                                item.postedBy._id == state._id
+                                item.postedBy._id === state._id
                                 && <i className="material-icons" style={{float:"right"}}
                                 onClick={() => deletePost(item._id)}
                                 >delete</i>
@@ -139,7 +139,7 @@ const Home = () => {
                             </h5>
 
                             <div className="card-image">
-                                <img src={item.photo} />
+                                <img src={item.photo} alt="" />
                             </div>
                             <div className="card-content">
                                 <i className="material-icons" style={{color:"red"}}>favorite</i>
