@@ -146,10 +146,10 @@ const Home = () => {
                                 {item.likes.includes(state._id)?
                                 
                                 <i className="material-icons" 
-                                onClick={() => unlikePost(item._id)}>thumb_down</i>
+                                onClick={() => {unlikePost(item._id)}}>thumb_down</i>
                                 
                                 :<i className="material-icons" 
-                                onClick={() => likePost(item._id)}>thumb_up</i>
+                                onClick={() => {likePost(item._id)}}>thumb_up</i>
 
                                 }
                                 
@@ -160,10 +160,7 @@ const Home = () => {
                                 {
                                     item.comments.map(record => {
                                         return(
-                                            <h6 key={record._id}>
-                                                <span style={{fontWeight:"500"}}>
-                                                    {record.postedBy.name}
-                                                </span>{record.text}
+                                            <h6 key={record._id}><span style={{fontWeight:"500"}}>{record.postedBy.name}</span>{record.text}
                                             </h6>
                                         )
                                     })

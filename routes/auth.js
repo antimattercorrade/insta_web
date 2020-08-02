@@ -10,7 +10,7 @@ const crypto = require('crypto')
 const nodemailer = require('nodemailer')
 const sendgridTransport = require('nodemailer-sendgrid-transport')
 const {SENDGRID_API,EMAIL} = require('../config/keys')
-mongoose.set('useFindAndModify', false);
+//mongoose.set('useFindAndModify', false);
 
 const transporter = nodemailer.createTransport(sendgridTransport({
     auth:{

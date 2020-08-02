@@ -86,7 +86,7 @@ const NavBar = () => {
               </ul>
           </div>
           <div className="modal-footer">
-            <button className="modal-close waves-effect waves-green btn-flat" onClick={()=>setSearch('')}>close</button>
+            <button className="modal-close waves-effect waves-green btn-flat" onClick={()=>setSearch('')}>Close</button>
           </div>
         </div>
         </nav>

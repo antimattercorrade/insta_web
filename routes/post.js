@@ -3,7 +3,7 @@ const router = express.Router()
 const mongoose = require('mongoose')
 const requireLogin = require('../middleware/requireLogin')
 const Post = mongoose.model("Post")
-mongoose.set('useFindAndModify', false);
+//mongoose.set('useFindAndModify', false);
 
 router.get('/allpost',requireLogin,(req,res) => {
     Post.find()
@@ -100,7 +100,7 @@ router.put('/comment',requireLogin,(req,res) => {
         postedBy:req.user._id
     }
     Post.findByIdAndUpdate(req.body.postId,{
-        $pull:{comments:comment}
+        $push:{comments:comment}
     },{
         new:true
     })

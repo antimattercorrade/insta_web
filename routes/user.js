@@ -4,13 +4,13 @@ const mongoose = require('mongoose')
 const requireLogin = require('../middleware/requireLogin')
 const Post = mongoose.model("Post")
 const User = mongoose.model("User")
-mongoose.set('useFindAndModify', false);
+//mongoose.set('useFindAndModify', false);
 
 router.get('/user/:id',requireLogin,(req,res) => {
     User.findOne({_id:req.params.id})
     .select("-password")
     .then(user => {
-        Post.find({postedBy:req.params._id})
+        Post.find({postedBy:req.params.id})
         .populate("postedBy","_id name")
         .exec((err,posts) => {
             if(err){
